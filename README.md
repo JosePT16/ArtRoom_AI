@@ -54,6 +54,7 @@ of artist Pancho Fierro. The model was fine-tuned by the page Replicate
 #### 1. Clone the repository
 ```
 git clone git@github.com:JosePT16/ArtRoom_AI.git
+cd ArtRoom-AI
 ```
 ####  2. Install uv if not installed
 ```
@@ -119,12 +120,5 @@ ArtRoom_AI/
 This project was completed for the course:
 MPCS 52700 — Generative AI
 University of Chicago
-
-Demonstrated concepts include:
-
-- Text-to-image and image-to-image diffusion
-- Fine-tuning using LoRA
-- Construction of a RAG pipeline
-- Full interactive application design using Streamlit
 
 
