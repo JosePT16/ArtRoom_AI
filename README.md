@@ -19,7 +19,7 @@ ArtRoom AI is an interactive Streamlit application that combines four AI capabil
 This chatbot answers as if it were the selected artist, speaking in first person.
 It retrieves information from online sources using RAG and responds only with verified context.
 
-The system loads artist webpages, splits them into chunks, creates embeddings, and stores them in a FAISS index.
+The system loads artist wikipedia webpages and stores them in a FAISS index.
 When the user asks a question, the chatbot searches for the most relevant text and generates an answer based only on that information.
 
 If the answer is not found, it replies: “I would prefer not to talk about that.”
@@ -52,47 +52,67 @@ of artist Pancho Fierro. The model was fine-tuned by the page Replicate
 ### For Windows
 
 #### 1. Clone the repository
-- git clone git@github.com:JosePT16/ArtRoom_AI.git
-
+```
+git clone git@github.com:JosePT16/ArtRoom_AI.git
+```
 ####  2. Install uv if not installed
-- pip install uv
-
+```
+pip install uv
+```
 ####  3. Set environment variables
-- $env: REPLICATE_API_TOKEN=your_token_here
-- $env: OPENAI_API_KEY=your_key_here
+```
+$env: REPLICATE_API_TOKEN=your_token_here
+$env: OPENAI_API_KEY=your_key_here
+```
 
 #### 4. Run the program
-- uv sync
-- uv run streamlit run .\app.py
+```
+uv sync
+uv run streamlit run .\app.py
+```
 
-
-### For MAC
+### For MAC - LINUX
 
 #### 1. Clone the repository
-- git clone git@github.com:JosePT16/ArtRoom_AI.git
-- cd artroom-ai
-
+```
+git clone git@github.com:JosePT16/ArtRoom_AI.git
+cd ArtRoom-AI
+```
 
 ####  2. Install uv if not installed
-- curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
 ####  3. Set environment variables
-- export REPLICATE_API_TOKEN="your_token_here"
-- export OPENAI_API_KEY="your_key_here"
+```
+export REPLICATE_API_TOKEN="your_token_here"
+export OPENAI_API_KEY="your_key_here"
+```
 
 #### 4. Run the program
-- uv sync
-- uv run streamlit run app.py
-
+```
+uv sync
+uv run streamlit run app.py
+```
 
 ## PROJECT STRUCTURE
 
+```
 ArtRoom_AI/
+├── README.md
+├── app.py
+├── config
+│   └── styles.json
+├── main.py
+├── pyproject.toml
+├── utils
+│   ├── chatbot_rag.py
+│   ├── prompt_generator.py
+│   └── sd_api.py
+```
 
-app.py
-utils/ (helper scripts)
-config/ json archives
-main.py
+
 
 ## ACADEMIC CONTEXT
 
