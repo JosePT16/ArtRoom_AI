@@ -1,0 +1,29 @@
+{
+  "van_gogh": {
+    "name": "Van Gogh",
+    "style_prompt": "in the style of Vincent Van Gogh, thick impasto, swirling brush strokes, vibrant blues and yellows, post-impressionist texture"
+  },
+  "monet": {
+    "name": "Claude Monet",
+    "style_prompt": "in the style of Claude Monet, soft pastel colors, impressionist light, gentle brush strokes, blurred edges"
+  },
+  "picasso": {
+    "name": "Pablo Picasso",
+    "style_prompt": "in the style of Pablo Picasso, cubist abstraction, fragmented geometric shapes, bold contrasting colors, experimental composition"
+  },
+  "velazquez": {
+    "name": "Diego Velazquez",
+    "style_prompt": "in the style of Diego Velazquez, Spanish Baroque realism, dramatic lighting, rich textures, court portrait aesthetics, deep shadows"
+  },
+  "dali": {
+    "name": "Salvador Dali",
+    "style_prompt": "in the style of Salvador Dalí, surreal dream-like visuals, melting forms, dramatic shadows, hyper-realistic textures in impossible scenes"
+  },
+
+  "fierro": {
+    "name": "Pancho Fierro - No fine-tunned",
+    "style_prompt": "in the style of Pancho Fierro, traditional Peruvian folk art, 19th-century Lima watercolor, vibrant colors, detailed costumes and everyday scenes"
+  }
+
+
+}
