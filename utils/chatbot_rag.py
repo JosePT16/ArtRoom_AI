@@ -26,11 +26,11 @@ ARTIST_URLS = {
     ],
 
     "Velasquez": [
-        "https://en.wikipedia.org/wiki/Diego_Velasquez",
+        "https://en.wikipedia.org/wiki/Diego_Vel%C3%A1zquez%22",
     ],
 
     "Dali": [
-        "https://en.wikipedia.org/wiki/Salvador_Dali",
+        "https://en.wikipedia.org/wiki/Salvador_Dal%C3%AD",
     ],
 
     "Pancho Fierro": [

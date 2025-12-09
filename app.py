@@ -119,8 +119,12 @@ def image_to_image():
 def pancho_fierro_experience():
     st.header("The Pancho Fierro Experience")
     st.markdown("#### This room generates images from text, using a model fine-tuned with 30 images of Pancho Fierro.")
-    st.markdown("###### Pancho Fierro was an Afro-Peruvian watercolor painter who lived in Lima in the nineteenth century "
-        "and depicted everyday characters from the city with mainly descriptive purpose. You can see some of his work here."
+    st.markdown(
+    """
+    ###### Pancho Fierro was an Afro-Peruvian watercolor painter who lived in Lima in the nineteenth century 
+    and depicted everyday characters from the city with mainly descriptive purpose. You can see some of his work 
+    [here](https://es.wikipedia.org/wiki/Anexo:Obras_de_Pancho_Fierro).
+    """
     )
 
 
@@ -137,7 +141,6 @@ def pancho_fierro_experience():
         with st.spinner("Enhancing prompt"):
             final_prompt = build_prompt_pancho(user_text, "Pancho Fierro style")
         
-        st.subheader("Final SD Prompt")
         
         with st.spinner("Drawing the picture..."):
             image_url = generate_image_pancho(final_prompt)
