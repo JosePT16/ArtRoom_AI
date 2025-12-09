@@ -51,7 +51,7 @@ of artist Pancho Fierro. The model was fine-tuned by the page Replicate
 ### For Windows
 
 #### 1. Clone the repository
-- git clone https://github.com/yourusername/artroom-ai.
+- git clone git@github.com:JosePT16/ArtRoom_AI.git
 
 ####  2. Install uv if not installed
 - pip install uv
