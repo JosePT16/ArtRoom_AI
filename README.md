@@ -2,14 +2,15 @@
 
 ArtRoom AI is an interactive Streamlit application that combines four AI capabilities:
 
-1.  A retrieval-augmented chatbot (RAG).
+1.  A retrieval-augmented chatbot (RAG) and langchain structure.
 
 2. Text-to-image generation,
 
 3. Image-to-image artistic transformation,
 
-4. A custom fine-tuned diffusion model
+4. Generation and use of custom fine-tuned diffusion model
 
+5. Prompt enhancing using GPT
 
 ## FEATURES
 
@@ -68,7 +69,7 @@ of artist Pancho Fierro. The model was fine-tuned by the page Replicate
 ### For MAC
 
 #### 1. Clone the repository
-- git clone https://github.com/yourusername/artroom-ai.
+- git clone git@github.com:JosePT16/ArtRoom_AI.git
 - cd artroom-ai
 
 
