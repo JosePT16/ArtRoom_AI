@@ -1,5 +1,13 @@
 # ARTROOM AI
 
+## NAME: Jose Pajuelo
+#### Github Repository: 
+ - link: https://github.com/JosePT16/ArtRoom_AI
+ - For cloning: git@github.com:JosePT16/ArtRoom_AI.git
+ - The Replicate API key is included in a .txt file for the professor to test 
+
+## DESCRIPTION
+
 ArtRoom AI is an interactive Streamlit application that combines four AI capabilities:
 
 1.  A retrieval-augmented chatbot (RAG) and langchain structure.
@@ -118,7 +126,7 @@ ArtRoom_AI/
 ## ACADEMIC CONTEXT
 
 This project was completed for the course:
-MPCS 52700 — Generative AI
+MPCS 57200 — Generative AI
 University of Chicago
 
 
