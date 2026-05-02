@@ -37,8 +37,34 @@ ARTIST_TO_IMAGE = {
 }
 
 
+def landing_page():
+    # CODEX: Added a visual landing page so the artist is selected from the six portraits instead of a dropdown.
+    st.header("ARTROOM AI")
+    st.subheader("Choose an artist to enter the studio.")
+
+    artists = list(ARTIST_URLS.keys())
+
+    # CODEX: Render the six artists as a 3x2 gallery and store the selected artist in session state.
+    for row_start in range(0, len(artists), 3):
+        columns = st.columns(3, gap="large")
+        row_artists = artists[row_start : row_start + 3]
+
+        for col, artist in zip(columns, row_artists):
+            with col:
+                image_path = ARTIST_TO_IMAGE[artist]
+                if image_path.exists():
+                    st.image(str(image_path), use_container_width=True)
+                else:
+                    st.info(f"Add an image at `{image_path}`.")
+
+                if st.button(artist, key=f"landing_artist_{artist}"):
+                    st.session_state.selected_artist = artist
+                    st.session_state.current_page = "home"
+                    st.rerun()
+
+
 def home_page():
-    # Use the home page as the main navigation flow for selecting an artist first.
+    # CODEX: Reused the existing home page after landing selection, keeping the rest of the view intact.
     st.header("ARTROOM AI")
     st.subheader(
         "Choose an artist first, then decide whether you want to talk, paint, or redesign an image."
@@ -48,12 +74,9 @@ def home_page():
     left_col, right_col = st.columns([3, 2], gap="large")
 
     with left_col:
-        artist = st.selectbox(
-            "Select an artist:",
-            list(ARTIST_URLS.keys()),
-        )
+        artist = st.session_state.get("selected_artist", list(ARTIST_URLS.keys())[0])
 
-        # Store the selected artist so the chosen action can reuse it consistently.
+        # CODEX: Preserve the selected artist from the landing page for the existing tools below.
         st.session_state.selected_artist = artist
 
         # Let the user choose the action after the artist has already been selected.
@@ -219,7 +242,14 @@ def image_to_image(artist, style_key):
 
 
 def main():
-    # Simplify the app into a single artist-first home page.
+    # CODEX: Added a small page-state router so the app opens on the artist gallery first.
+    if "current_page" not in st.session_state:
+        st.session_state.current_page = "landing"
+
+    if st.session_state.current_page == "landing":
+        landing_page()
+        return
+
     home_page()
 
 

@@ -70,8 +70,8 @@ pip install uv
 ```
 ####  3. Set environment variables
 ```
-$env: REPLICATE_API_TOKEN=your_token_here
-$env: OPENAI_API_KEY=your_key_here
+$env:REPLICATE_API_TOKEN=your_token_here
+$env:OPENAI_API_KEY=your_key_here
 ```
 
 #### 4. Run the program
