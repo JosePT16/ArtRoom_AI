@@ -1,0 +1,9 @@
+{
+  "artist": "Velasquez",
+  "urls": [
+    "https://en.wikipedia.org/wiki/Diego_Vel%C3%A1zquez%22"
+  ],
+  "chunk_size": 1000,
+  "chunk_overlap": 150,
+  "cache_version": "1"
+}
