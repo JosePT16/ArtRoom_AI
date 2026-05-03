@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://artroom-ai.onrender.com/api/:path*"
+    },
+    {
+      "source": "/pictures/:path*",
+      "destination": "https://artroom-ai.onrender.com/pictures/:path*"
+    },
+    {
+      "source": "/hero/:path*",
+      "destination": "https://artroom-ai.onrender.com/hero/:path*"
+    }
+  ]
+}
