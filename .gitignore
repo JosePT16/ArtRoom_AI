@@ -1,5 +1,6 @@
 .env
 .venv/
+.venv.broken-*/
 .vscode/
 __pycache__/
 *.pyc
