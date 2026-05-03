@@ -188,7 +188,7 @@ def text_to_image(artist, style_key):
             #st.subheader("Final Description")
             #st.write(final_prompt)
 
-            with st.spinner("Generating image with Stable Diffusion"):
+            with st.spinner("Generating image with DALL-E"):
                 image_url = generate_image_sd(final_prompt)
 
         st.image(image_url, caption="Generated Image")

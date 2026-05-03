@@ -24,7 +24,7 @@ If the answer is not found, it replies: "I would prefer not to talk about that."
 
 ### Text-to-Image Generation
 
-Generates artwork from a user prompt and the selected artist style. Non-Pancho artists use Replicate model `black-forest-labs/flux-1.1-pro`.
+Generates artwork from a user prompt and the selected artist style. Non-Pancho artists use OpenAI DALL-E 3.
 
 ### Image-to-Image Transformation
 
