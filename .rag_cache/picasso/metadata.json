@@ -1,0 +1,9 @@
+{
+  "artist": "Picasso",
+  "urls": [
+    "https://en.wikipedia.org/wiki/Pablo_Picasso"
+  ],
+  "chunk_size": 1000,
+  "chunk_overlap": 150,
+  "cache_version": "1"
+}

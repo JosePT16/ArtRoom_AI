@@ -1,0 +1,9 @@
+{
+  "artist": "Pancho Fierro",
+  "urls": [
+    "https://es.wikipedia.org/wiki/Pancho_Fierro"
+  ],
+  "chunk_size": 1000,
+  "chunk_overlap": 150,
+  "cache_version": "1"
+}

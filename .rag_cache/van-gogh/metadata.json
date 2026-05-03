@@ -1,0 +1,10 @@
+{
+  "artist": "Van Gogh",
+  "urls": [
+    "https://en.wikipedia.org/wiki/Vincent_van_Gogh",
+    "https://www.vangoghmuseum.nl/en/stories"
+  ],
+  "chunk_size": 1000,
+  "chunk_overlap": 150,
+  "cache_version": "1"
+}

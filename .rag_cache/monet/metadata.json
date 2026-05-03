@@ -1,0 +1,9 @@
+{
+  "artist": "Monet",
+  "urls": [
+    "https://en.wikipedia.org/wiki/Claude_Monet"
+  ],
+  "chunk_size": 1000,
+  "chunk_overlap": 150,
+  "cache_version": "1"
+}

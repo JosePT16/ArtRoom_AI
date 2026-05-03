@@ -1,6 +1,6 @@
 {
   "van_gogh": {
-    "name": "Van Gogh",
+    "name": "Vincent Van Gogh",
     "style_prompt": "in the style of Vincent Van Gogh, thick impasto, swirling brush strokes, vibrant blues and yellows, post-impressionist texture"
   },
   "monet": {
@@ -21,7 +21,7 @@
   },
 
   "fierro-no-fine-tunned": {
-    "name": "Pancho Fierro - No fine-tunned",
+    "name": "Pancho Fierro",
     "style_prompt": "in the style of Pancho Fierro, traditional Peruvian folk art, 19th-century Lima watercolor, vibrant colors, detailed costumes and everyday scenes"
   }
 

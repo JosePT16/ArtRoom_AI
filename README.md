@@ -1,124 +1,142 @@
 # ARTROOM AI
 
-ArtRoom AI is an interactive Streamlit application that combines four AI capabilities:
+## NAME
 
-1.  A retrieval-augmented chatbot (RAG) and langchain structure.
+Jose Pajuelo
 
-2. Text-to-image generation,
+## DESCRIPTION
 
-3. Image-to-image artistic transformation,
+ArtRoom AI is an interactive React application backed by a Python FastAPI API. It combines:
 
-4. Generation and use of custom fine-tuned diffusion model
-
-5. Prompt enhancing using GPT
+1. A retrieval-augmented chatbot (RAG) with LangChain.
+2. Text-to-image generation.
+3. Image-to-image artistic transformation.
+4. A custom fine-tuned diffusion model for Pancho Fierro.
+5. Prompt enhancement using GPT.
 
 ## FEATURES
 
 ### RAG Chatbot
 
-This chatbot answers as if it were the selected artist, speaking in first person.
-It retrieves information from online sources using RAG and responds only with verified context.
+The chatbot answers as the selected artist in first person. It loads artist web pages, stores them in a FAISS index, retrieves relevant context, and answers only from that verified context.
 
-The system loads artist wikipedia webpages and stores them in a FAISS index.
-When the user asks a question, the chatbot searches for the most relevant text and generates an answer based only on that information.
-
-If the answer is not found, it replies: “I would prefer not to talk about that.”
+If the answer is not found, it replies: "I would prefer not to talk about that."
 
 ### Text-to-Image Generation
 
-This section generates artwork from the artist selected using
-natural-language prompts enhanced by GPT.
-Uses Replicate API diffusion model of "black-forest-labs/flux-1.1-pro"
+Generates artwork from a user prompt and the selected artist style. Non-Pancho artists use Replicate model `black-forest-labs/flux-1.1-pro`.
 
 ### Image-to-Image Transformation
 
-This section allow to upload images to turn it into artistic variations
-in the style of the artist selected.
-Uses Replicate API diffusion model of "prunaai/p-image-edit"
+Uploads a JPG or PNG and applies the selected artist style while preserving the original image structure. Uses Replicate model `prunaai/p-image-edit`.
 
-### Text-to-Image with Fine-Tuned Model
+### Fine-Tuned Pancho Fierro Model
 
-This section generates artwork from the artist selected using
-natural-language prompts enhanced by GPT.
-
-For generating the image, it use a model fine-tuned with 30 images
-of artist Pancho Fierro. The model was fine-tuned by the page Replicate
-(https://replicate.com/)
-
+Pancho Fierro text-to-image requests use the fine-tuned Replicate model configured in `utils/sd_api.py`.
 
 ## INSTALLATION
 
+### Windows
 
-### For Windows
+1. Install Python dependencies:
 
-#### 1. Clone the repository
-```
-git clone git@github.com:JosePT16/ArtRoom_AI.git
-cd ArtRoom-AI
-```
-####  2. Install uv if not installed
-```
-pip install uv
-```
-####  3. Set environment variables
-```
-$env: REPLICATE_API_TOKEN=your_token_here
-$env: OPENAI_API_KEY=your_key_here
-```
-
-#### 4. Run the program
-```
+```powershell
 uv sync
-uv run streamlit run .\app.py
 ```
 
-### For MAC - LINUX
+2. Install React dependencies:
 
-#### 1. Clone the repository
-```
-git clone git@github.com:JosePT16/ArtRoom_AI.git
-cd ArtRoom-AI
+```powershell
+npm install
 ```
 
-####  2. Install uv if not installed
-```
-curl -LsSf https://astral.sh/uv/install.sh | sh
+3. Set environment variables if they are not already in `.env`:
+
+```powershell
+$env:REPLICATE_API_TOKEN="your_token_here"
+$env:OPENAI_API_KEY="your_key_here"
 ```
 
-####  3. Set environment variables
+4. Start the API:
+
+```powershell
+uv run uvicorn api:app --reload
 ```
+
+5. In a second terminal, start React:
+
+```powershell
+npm run dev
+```
+
+6. Open:
+
+```text
+http://127.0.0.1:5173
+```
+
+### Mac / Linux
+
+1. Install Python dependencies:
+
+```bash
+uv sync
+```
+
+2. Install React dependencies:
+
+```bash
+npm install
+```
+
+3. Set environment variables if they are not already in `.env`:
+
+```bash
 export REPLICATE_API_TOKEN="your_token_here"
 export OPENAI_API_KEY="your_key_here"
 ```
 
-#### 4. Run the program
+4. Start the API:
+
+```bash
+uv run uvicorn api:app --reload
 ```
-uv sync
-uv run streamlit run app.py
+
+5. In a second terminal, start React:
+
+```bash
+npm run dev
+```
+
+6. Open:
+
+```text
+http://127.0.0.1:5173
 ```
 
 ## PROJECT STRUCTURE
 
-```
+```text
 ArtRoom_AI/
-├── README.md
+├── api.py
 ├── app.py
-├── config
+├── config/
 │   └── styles.json
+├── index.html
 ├── main.py
+├── package.json
 ├── pyproject.toml
-├── utils
+├── src/
+│   ├── main.jsx
+│   └── styles.css
+├── utils/
 │   ├── chatbot_rag.py
 │   ├── prompt_generator.py
-│   └── sd_api.py
+│   ├── sd_api.py
+│   └── pictures/
+└── vite.config.js
 ```
-
-
 
 ## ACADEMIC CONTEXT
 
-This project was completed for the course:
-MPCS 52700 — Generative AI
-University of Chicago
-
-
+This project was completed for the course MPCS 57200 Generative AI at the University of Chicago.
