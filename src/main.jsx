@@ -30,6 +30,9 @@ const toolCopy = {
   }
 };
 
+const API_FAILURE_MESSAGE =
+  "The token quota for today has been reached or the external AI service is temporarily unavailable. Please try again later.";
+
 function getArtistDisplayName(artist) {
   return artist.displayName || artist.name;
 }
@@ -44,6 +47,15 @@ async function apiJson(path, options = {}) {
     throw new Error(payload.detail || "Request failed.");
   }
   return payload;
+}
+
+function getApiErrorMessage(error) {
+  const message = error?.message || "";
+  if (message.includes("Question is required") || message.includes("Upload a JPG or PNG image")) {
+    return message;
+  }
+
+  return API_FAILURE_MESSAGE;
 }
 
 function App() {
@@ -390,7 +402,7 @@ function ChatTool({ artist }) {
       });
       setMessages((current) => [...current, { role: "assistant", content: response.Answer }]);
     } catch (err) {
-      setError(err.message);
+      setError(getApiErrorMessage(err));
     } finally {
       setBusy(false);
     }
@@ -457,7 +469,7 @@ function TextToImageTool({ artist }) {
       });
       setImageUrl(response.imageUrl);
     } catch (err) {
-      setError(err.message);
+      setError(getApiErrorMessage(err));
     } finally {
       setBusy(false);
     }
@@ -539,7 +551,7 @@ function ImageToImageTool({ artist }) {
       }
       setResultUrl(payload.imageUrl);
     } catch (err) {
-      setError(err.message);
+      setError(getApiErrorMessage(err));
     } finally {
       setBusy(false);
     }
