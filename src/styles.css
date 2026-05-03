@@ -51,7 +51,8 @@ button {
   width: 100%;
   height: 64px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 18px;
   padding: 0 32px;
   background: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.16);
@@ -91,7 +92,18 @@ button {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 18px;
+}
+
+.site-nav::before,
+.site-nav .site-link:not(:last-child)::after {
+  color: #000000;
+  content: "|";
+  font-weight: 400;
+}
+
+.site-nav .site-link:not(:last-child)::after {
+  margin-left: 18px;
 }
 
 .gallery-shell {
