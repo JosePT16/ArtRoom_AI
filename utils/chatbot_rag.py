@@ -7,7 +7,7 @@ from langchain_community.document_loaders import WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 
-from langchain_openai import OpenAI, OpenAIEmbeddings
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableSequence
@@ -174,8 +174,13 @@ def build_chain():
         Use ONLY the provided context to answer the question.
         Use the conversation history only to understand references like "he", "that", or "his brother".
         Do not invent facts from the conversation history.
-        If the answer is not in the context, say:
-        "I would prefer not to talk about that"
+        If the context does not directly answer the question but includes related artistic
+        facts, answer carefully from those facts and say what you cannot know for sure.
+        If the question is unrelated to the artist, art, biography, or the conversation,
+        politely decline in character without mentioning retrieved information, context,
+        documents, databases, or sources.
+        Decline unrelated questions by saying:
+        "I would rather keep our conversation focused on my life and art."
 
         Conversation history:
         {history}
@@ -191,7 +196,7 @@ def build_chain():
         input_variables=["artist", "history", "context", "question"],
     )
 
-    llm = OpenAI(temperature=0.5)
+    llm = ChatOpenAI(model="gpt-4o", temperature=0.5)
     parser = StrOutputParser()
 
     # LCEL pipeline:
