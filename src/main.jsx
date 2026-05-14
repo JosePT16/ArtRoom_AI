@@ -226,11 +226,9 @@ function HeroPage({ images, initialSection, onSectionHandled, onEnter }) {
           project uses open and freely available information and images as its source material.
           <br /><br />
 
-          The chatbots use GPT-4o to interact with users. LangChain manages the conversation flow and retrieves
-          relevant information from English Wikipedia pages, which are vectorized with RAG and stored in 
-          FAISS so answers stay grounded in the source material.. The image-generation system uses enhanced AI prompts,
-          stable difussion models, plus a fine-tuned model trained on 30 paintings by Afro-Peruvian artist
-          Pancho Fierro to recreate his distinctive style.
+          It uses GPT-4o with LangChain, Wikipedia-based RAG stored in FAISS for grounded chatbot 
+          answers, and Stable Diffusion models, including a fine-tuned Pancho Fierro model 
+          trained on 30 paintings, for image generation.
         </p>
 
       </section>
