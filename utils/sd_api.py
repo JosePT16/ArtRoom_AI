@@ -8,11 +8,11 @@ REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 
-def _dalle_size(width: int, height: int) -> str:
+def _openai_image_size(width: int, height: int) -> str:
     if width > height:
-        return "1792x1024"
+        return "1536x1024"
     if height > width:
-        return "1024x1792"
+        return "1024x1536"
     return "1024x1024"
 
 
@@ -24,16 +24,18 @@ def generate_image_sd(prompt: str, width=768, height=768):
     client = OpenAI(api_key=OPENAI_API_KEY)
 
     response = client.images.generate(
-        model="dall-e-3",
+        model="gpt-image-1",
         prompt=prompt,
-        size=_dalle_size(width, height),
-        quality="standard",
+        size=_openai_image_size(width, height),
+        quality="medium",
         n=1,
-        response_format="url",
     )
 
     if response.data and response.data[0].url:
         return response.data[0].url
+
+    if response.data and response.data[0].b64_json:
+        return f"data:image/png;base64,{response.data[0].b64_json}"
 
     raise ValueError(f"Unexpected OpenAI image response: {response}")
 
