@@ -398,8 +398,8 @@ h2 {
   display: block;
   margin: 16px auto 0;
   padding: 0;
-  color: #39586C;
-  background: transparent;
+  color: white;
+  background: #39586C;
   border: 0;
   font-size: 1rem;
   font-weight: 800;
